@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page com Carrossel e Navegação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="logo">Minha Empresa</div>
+    <div class="login">
+        <a href="#">Login</a>
+    </div>
+</header>
+
+<div id="carousel">
+    <!-- Aqui vai o conteúdo do carrossel -->
+    <p>Carrossel de Imagens</p>
+</div>
+
+<nav>
+    <button onclick="showContent('home')">Home</button>
+    <button onclick="showContent('sobre')">Sobre</button>
+    <button onclick="showContent('servicos')">Serviços</button>
+    <button onclick="showContent('portfolio')">Portfólio</button>
+    <button onclick="showContent('contato')">Contato</button>
+    <button onclick="showContent('faq')">FAQ</button>
+</nav>
+
+<div id="content">
+    <p>Bem-vindo à nossa página inicial!</p>
+</div>
+
+<script>
+    function showContent(page) {
+        const contentDiv = document.getElementById('content');
+        let content = '';
+
+        switch(page) {
+            case 'home':
+                content = '<p>Bem-vindo à nossa página inicial!</p>';
+                break;
+            case 'sobre':
+                content = '<p>Sobre nós: Informações sobre a empresa.</p>';
+                break;
+            case 'servicos':
+                content = '<p>Nossos serviços: Descrição dos serviços oferecidos.</p>';
+                break;
+            case 'portfolio':
+                content = '<p>Portfólio: Projetos realizados.</p>';
+                break;
+            case 'contato':
+                content = '<p>Contato: Formas de entrar em contato conosco.</p>';
+                break;
+            case 'faq':
+                content = '<p>FAQ: Perguntas frequentes.</p>';
+                break;
+            default:
+                content = '<p>Bem-vindo à nossa página inicial!</p>';
+        }
+
+        contentDiv.innerHTML = content;
+    }
+</script>
+</body>
+</html>
