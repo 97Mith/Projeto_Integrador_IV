@@ -23,8 +23,9 @@ public class Aluno extends Pessoa {
     public Aluno() {
     }
 
-    public Aluno(Date dataNasc, Integer rating, List<FichaAluno> fichasAluno) {
-        super();
+    public Aluno(String nome, String cpf, String tel, String email, String senha, String cargo, boolean estaAtivo,
+                 Date dataNasc, Integer rating, List<FichaAluno> fichasAluno) {
+        super(nome, cpf, tel, email, senha, cargo, estaAtivo);
         this.dataNasc = dataNasc;
         this.rating = rating;
         this.fichasAluno = fichasAluno;
