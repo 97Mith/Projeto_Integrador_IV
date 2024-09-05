@@ -1,0 +1,39 @@
+package org.mm.testes;
+
+import org.mm.entities.Aluno;
+import org.mm.entities.FichaAluno;
+import org.mm.repositories.AlunoRepository;
+
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+public class TesteSalvarAluno {
+    public static void main(String[] args) {
+        List<FichaAluno> fichasAluno = Arrays.asList(new FichaAluno(), new FichaAluno());
+
+        Aluno aluno = new Aluno(
+                "Marcão Aparecido",
+                "123.456.789-00",
+                "11999999999",
+                "joao.silva@example.com",   // email
+                "senhaSegura123",           // senha
+                "Estudante",                // cargo
+                true,                       // estaAtivo
+                new Date(),                 // dataNasc
+                85,                         // rating
+                fichasAluno                 // fichasAluno
+        );
+
+        System.out.println("Nome: " + aluno.getNome());
+        System.out.println("Data de Nascimento: " + aluno.getDataNasc());
+        System.out.println("Pontuação: " + aluno.getRating());
+        System.out.println("Número de Fichas: " + aluno.getFichasAluno().size());
+
+        AlunoRepository alunoRepository = new AlunoRepository();
+
+        alunoRepository.save(aluno);
+
+        System.out.println("Aluno salvo no banco de dados com sucesso!");
+    }
+}
