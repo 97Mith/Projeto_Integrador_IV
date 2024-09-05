@@ -1,26 +1,23 @@
 package org.mm.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "tb_alunos")
 public class Aluno extends Pessoa {
 
     @Column(name = "data_de_nascimento", nullable = false)
     private Date dataNasc;
-
     @Column(name = "pontuacao")
     private Integer rating;
-
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "modalidades")
     private List<FichaAluno> fichasAluno;
 
     public Aluno() {
+        super();
     }
 
     public Aluno(String nome, String cpf, String tel, String email, String senha, String cargo, boolean estaAtivo,

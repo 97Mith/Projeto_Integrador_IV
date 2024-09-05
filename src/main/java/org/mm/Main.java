@@ -2,6 +2,9 @@ package org.mm;
 
 import org.mm.entities.Aluno;
 import org.mm.entities.FichaAluno;
+import org.mm.interfaces.IRepositoryGenerico;
+import org.mm.interfaces.IServiceGenerico;
+import org.mm.repositories.AlunoRepository;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -29,5 +32,11 @@ public class Main {
         System.out.println("Data de Nascimento: " + aluno.getDataNasc());
         System.out.println("Pontuação: " + aluno.getRating());
         System.out.println("Número de Fichas: " + aluno.getFichasAluno().size());
+
+        AlunoRepository alunoRepository = new AlunoRepository();
+
+        alunoRepository.save(aluno);
+
+        System.out.println("Aluno salvo no banco de dados com sucesso!");
     }
 }

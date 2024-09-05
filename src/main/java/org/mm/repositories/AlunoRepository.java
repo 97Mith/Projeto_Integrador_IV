@@ -1,8 +1,9 @@
 package org.mm.repositories;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import org.mm.entities.Aluno;
 
-public class AlunoRepository {
-    static EntityManagerFactory emf = Emf.iniciarConexao();
+public class AlunoRepository extends RepositoryGenerico<Aluno, Integer> {
+    public AlunoRepository() {
+        super(Aluno.class);
+    }
 }

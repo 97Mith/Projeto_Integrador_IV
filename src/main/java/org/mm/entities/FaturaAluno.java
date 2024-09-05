@@ -9,11 +9,10 @@ public class FaturaAluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(nullable = true)
     private Date vencimento;
     @Column(nullable = false)
     private double valor;
-
     @ManyToOne
     @JoinColumn(name = "responsavel_aluno")
     private ResponsavelAluno responsavelAluno;
