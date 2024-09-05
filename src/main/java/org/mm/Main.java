@@ -27,7 +27,6 @@ public class Main {
                 fichasAluno                 // fichasAluno
         );
 
-        // Teste: exibir informações do aluno
         System.out.println("Nome: " + aluno.getNome());
         System.out.println("Data de Nascimento: " + aluno.getDataNasc());
         System.out.println("Pontuação: " + aluno.getRating());
