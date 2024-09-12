@@ -11,16 +11,20 @@ public class Turma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
-    @JoinColumn(name = "modalidade")
+    @JoinColumn(name = "modalidade_id")
     private Modalidade modalidade;
     @Column(name = "hora_do_treino")
     private Date horarioTreino;
     @ManyToOne
-    @JoinColumn(name = "professor_da_atividade")
+    @JoinColumn(name = "professor_id")
     private Professor professor;
     @OneToMany
-    @JoinColumn(name = "alunos")
+    @JoinColumn(name = "alunos_id")
     private List<FichaAluno> alunos;
+
+    @OneToMany
+    @JoinColumn(name = "aulas_ids")
+    private List<Aula> aulas;
 
     public Turma() {
         super();
@@ -67,5 +71,13 @@ public class Turma {
 
     public void setAlunos(List<FichaAluno> alunos) {
         this.alunos = alunos;
+    }
+
+    public List<Aula> getAulas() {
+        return aulas;
+    }
+
+    public void setAulas(List<Aula> aulas) {
+        this.aulas = aulas;
     }
 }

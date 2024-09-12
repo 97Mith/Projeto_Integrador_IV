@@ -16,6 +16,10 @@ public class Aluno extends Pessoa {
     @JoinColumn(name = "modalidades")
     private List<FichaAluno> fichasAluno;
 
+    @OneToMany//(cascade = CascadeType.ALL)
+    @Column(name = "historico_de_comentarios")
+    private List<ComentarioAula> historicoComentarios;
+
     public Aluno() {
         super();
     }
@@ -26,6 +30,14 @@ public class Aluno extends Pessoa {
         this.dataNasc = dataNasc;
         this.rating = rating;
         this.fichasAluno = fichasAluno;
+    }
+
+    public List<ComentarioAula> getHistoricoComentarios() {
+        return historicoComentarios;
+    }
+
+    public void setHistoricoComentarios(List<ComentarioAula> historicoComentarios) {
+        this.historicoComentarios = historicoComentarios;
     }
 
     public Date getDataNasc() {

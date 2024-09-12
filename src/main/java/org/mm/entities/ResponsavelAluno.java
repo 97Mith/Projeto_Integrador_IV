@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "responsavel_pelo_aluno")
+@Table(name = "tb_responsavel_aluno")
 public class ResponsavelAluno extends Pessoa{
 
     @OneToMany
@@ -15,7 +15,7 @@ public class ResponsavelAluno extends Pessoa{
     private List<FaturaAluno> faturas;
 
     @OneToMany
-    @JoinColumn(name = "responsavel_por")
+    @JoinColumn(name = "responsavel_aluno_id")
     private List<Aluno> responsavelPor;
 
     public ResponsavelAluno() {
