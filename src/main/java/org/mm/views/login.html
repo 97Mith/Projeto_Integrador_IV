@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Main.css">
+        <title>Login</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #1c3e5a;
+            }
+
+            input[type="email"],
+            input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #2980b9;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #21618c;
+            }
+
+            button {
+                width: 100%;
+                padding: 3px;
+                background-color: #2980b9;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: #21618c;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <img src="assets/BadSportLogoBlue.jpg" alt="Login" style="width:200px; height:100px; vertical-align:middle;"/>
+            <h2>Login</h2>
+            <form>
+                <label for="esportes">Entrar como:</label>
+                <select id="esportes" name="esportes">
+                    <option value="futebol">Aluno</option>
+                    <option value="basquete">Professor</option>
+                    <option value="natacao">Gestor</option>
+                </select>
+                <input type="email" placeholder="Digite seu e-mail" required>
+                <input type="password" placeholder="Digite sua senha" required>
+                <input type="submit" value="Entrar">
+                <p/>
+                <button type="button" onclick="window.location.href = 'index.html'">Cadastrar</button>
+            </form>
+        </div>
+    </body>
+</html>

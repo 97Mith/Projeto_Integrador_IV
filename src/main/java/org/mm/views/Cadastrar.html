@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <link rel="stylesheet" href="Main.css">
+        <title>Cadastro</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #1c3e5a;
+            }
+
+            .form-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                width: 500px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="tel"],
+            select {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #2980b9;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #21618c;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #2980b9;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: #21618c;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <img src="BadSportLogoBlue.jpg" alt="Cadastro" style="width:200px; height:100px; vertical-align:middle;"/>
+            <h2>Cadastro</h2>
+            <form>
+                <label for="tipo">Cadastrar como:</label>
+                <select id="tipo" name="tipo">
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                    <option value="gestor">Gestor</option>
+                </select>
+
+                <label for="nomeAluno">Nome do Aluno:</label>
+                <input type="text" id="nomeAluno" name="nomeAluno" placeholder="Nome do Aluno" required>
+
+                <label for="cpfAluno">CPF do Aluno:</label>
+                <input type="text" id="cpfAluno" name="cpfAluno" placeholder="CPF do Aluno" required>
+
+                <label for="emailAluno">E-mail do Aluno:</label>
+                <input type="email" id="emailAluno" name="emailAluno" placeholder="E-mail do Aluno" required>
+
+                <label for="telefoneAluno">Telefone do Aluno:</label>
+                <input type="tel" id="telefoneAluno" name="telefoneAluno" placeholder="Telefone do Aluno" required>
+
+                <label for="senhaAluno">Senha do Aluno:</label>
+                <input type="password" id="senhaAluno" name="senhaAluno" placeholder="Senha do Aluno" required>
+
+                <label for="nomeResponsavel">Nome do Responsável:</label>
+                <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Nome do Responsável" required>
+
+                <label for="cpfResponsavel">CPF do Responsável:</label>
+                <input type="text" id="cpfResponsavel" name="cpfResponsavel" placeholder="CPF do Responsável" required>
+
+                <label for="emailResponsavel">E-mail do Responsável:</label>
+                <input type="email" id="emailResponsavel" name="emailResponsavel" placeholder="E-mail do Responsável" required>
+
+                <label for="telefoneResponsavel">Telefone do Responsável:</label>
+                <input type="tel" id="telefoneResponsavel" name="telefoneResponsavel" placeholder="Telefone do Responsável" required>
+
+                <input type="submit" value="Cadastrar">
+                <p></p>
+                <button type="button" onclick="window.location.href = 'index.html'">Voltar</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+

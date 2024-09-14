@@ -1,0 +1,84 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 8 de set. de 2024, 01:44:31
+    Author     : Marcos
+*/
+
+.custom-header {
+    background-color: #1c3e5a;
+}
+
+.custom-navbar {
+    background-color: #df3f00;
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Empilha imagem e texto */
+    align-items: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    width: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.2); /* Aumenta 20% no hover */
+}
+
+.text-container {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 6 colunas */
+    grid-gap: 20px; /* Espaço entre os itens do grid */
+    width: 90%;
+    max-width: 1600px;
+}
+
+.container {
+    border: 1px solid #df3f00;
+    display: flex;
+    flex-direction: column; /* Empilha imagem e texto */
+    align-items: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    width: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.2); /* Aumenta 20% no hover */
+}
+
+.text-container {
+    text-align: center;
+}
