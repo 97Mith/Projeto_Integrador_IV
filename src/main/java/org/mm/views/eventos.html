@@ -7,74 +7,47 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="Main.css">
-        <title>Login</title>
+        <link rel="stylesheet" href="Main.css"> 
+        <title>Postar e Exibir Eventos</title>
         <style>
-            body {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                height: 100vh;
-                background-color: #1c3e5a;
-
-            }
-
-            input[type="email"],
-            input[type="password"] {
-                width: 100%;
-                padding: 10px;
-                margin: 10px 0;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-
-            input[type="submit"] {
-                width: 100%;
-                padding: 10px;
-                background-color: #2980b9;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            input[type="submit"]:hover {
-                background-color: #21618c;
-            }
-
-            button {
-                width: 100%;
-                padding: 3px;
-                background-color: #2980b9;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-
-            button:hover {
-                background-color: #21618c;
-            }
-
-            .login-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 300px;
-                background-color: white;
+            .post-form {
+                max-width: 500px;
+                margin: 70px auto;
                 padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                margin: auto;
-                margin-top: 300px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .post-form input, .post-form textarea {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            .post-form button {
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            .post-container {
+                max-width: 500px;
+                margin: 20px auto;
+                margin-top: 70px;
+            }
+
+            .post {
+                margin-bottom: 20px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
             }
         </style>
     </head>
-
     <body>
         <!-- Navbar -->
         <div class="w3-top">
@@ -104,49 +77,82 @@
             </div>
         </div>
 
-        <!-- Conteúdo principal -->
-        <div class="login-container">
-            <h2>Login</h2>
-            <form>
-                <label for="esportes">Entrar como:</label>
-                <select id="esportes" name="esportes">
-                    <option value="futebol">Aluno</option>
-                    <option value="basquete">Professor</option>
-                    <option value="natacao">Gestor</option>
-                </select>
-                <input type="email" placeholder="Digite seu e-mail" required>
-                <input type="password" placeholder="Digite sua senha" required>
-                <input type="submit" value="Entrar">
-                <p/>
+        <div class="post-form">
+            <h2>Criar Evento</h2>
+            <form id="eventForm">
+                <label for="eventTitle">Título do Evento:</label>
+                <input type="text" id="eventTitle" name="eventTitle" maxlength="100" required>
+
+                <label for="startDate">Data e Hora de Início:</label>
+                <input type="datetime-local" id="startDate" name="startDate" required>
+
+                <label for="endDate">Data e Hora de Fim:</label>
+                <input type="datetime-local" id="endDate" name="endDate" required>
+
+                <label for="eventDescription">Descrição (máximo 300 caracteres):</label>
+                <textarea id="eventDescription" name="eventDescription" maxlength="300" rows="4" required></textarea>
+
+                <button type="submit">Postar Evento</button>
             </form>
         </div>
 
+        <div class="post-container" id="postContainer">
+            <!-- Eventos serão inseridos aqui -->
+        </div>
+
         <script>
-            function myFunction() {
-                var x = document.getElementById("navDemo");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                }
+            document.getElementById('eventForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+                const eventTitle = formData.get('eventTitle');
+                const startDate = formData.get('startDate');
+                const endDate = formData.get('endDate');
+                const eventDescription = formData.get('eventDescription');
+
+                addEvent(eventTitle, startDate, endDate, eventDescription);
+            });
+
+            function addEvent(title, start, end, description) {
+                const postContainer = document.getElementById('postContainer');
+                const postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+
+                const titleElement = document.createElement('h3');
+                titleElement.textContent = title;
+
+                const startElement = document.createElement('p');
+                startElement.textContent = 'Início: ' + new Date(start).toLocaleString();
+
+                const endElement = document.createElement('p');
+                endElement.textContent = 'Fim: ' + new Date(end).toLocaleString();
+
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = description;
+
+                postDiv.appendChild(titleElement);
+                postDiv.appendChild(startElement);
+                postDiv.appendChild(endElement);
+                postDiv.appendChild(descriptionElement);
+
+                postContainer.prepend(postDiv);
             }
         </script>
-
         <!-- Footer -->
-        <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+        <footer class="w3-container w3-padding-64 w3-opacity" style="text-align: left;">
             <div style="display: flex; align-items: center; margin-bottom: 16px;">
                 <img src="assets/telefone.png" alt="telefone" style="width:25px; height:25px; margin-right: 8px;"/>
                 <span><b>Telefone: </b>+55 (41) 99123-4567</span>
             </div>
+
             <div style="display: flex; align-items: center; margin-bottom: 16px;">
                 <img src="assets/email.png" alt="email" style="width:25px; height:25px; margin-right: 8px;"/>
                 <span><b>Email: </b>badsport@outlook.com</span>
             </div>
+
             <div style="display: flex; align-items: center; margin-bottom: 16px;">
                 <img src="assets/endereço.png" alt="endereço" style="width:25px; height:25px; margin-right: 8px;"/>
                 <span><b>Endereço: </b>Av. das Araucária, 3803</span>
             </div>
-
 
             <div class="w3-xlarge w3-padding-32">
                 <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -158,5 +164,17 @@
             </div>
             <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
         </footer>
+        
+        <script>  
+            function myFunction() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
     </body>
 </html>
+
