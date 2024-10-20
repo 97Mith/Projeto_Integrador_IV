@@ -13,4 +13,6 @@ public class Gestor extends Pessoa{
         super(nome, cpf, tel, email, senha, cargo, estaAtivo);
     }
 
+
+
 }

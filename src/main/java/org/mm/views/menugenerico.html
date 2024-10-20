@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 150px);
+            grid-gap: 10px;
+            justify-content: center; /* Centraliza o grid horizontalmente */
+            margin-top: 50px; /* Adiciona espaço superior */
+        }
+
+        .grid-item {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 8px;
+            overflow: hidden; /* Para garantir que a imagem não ultrapasse os limites */
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem se ajuste ao tamanho do container */
+        }
+    </style>
+    <script>
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="grid-item" onclick="goToPage('cadastro.html')">
+        <img src="img1.jpg" alt="Cadastro">
+    </div>
+    <div class="grid-item" onclick="goToPage('cadastroProfessores.html')">
+        <img src="img2.jpg" alt="Cadastro Professores">
+    </div>
+    <div class="grid-item" onclick="goToPage('noticias.html')">
+        <img src="img3.jpg" alt="Postar Noticia">
+    </div>
+    <div class="grid-item" onclick="goToPage('comentario.html')">
+        <img src="img4.jpg" alt="Postar Comentario">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagamentogenerico.html')">
+        <img src="img5.jpg" alt="Pagamento">
+    </div>
+    <div class="grid-item" onclick="goToPage('eventos.html')">
+        <img src="img6.jpg" alt="Eventos">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina7.html')">
+        <img src="img7.jpg" alt="Modalidade##">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina8.html')">
+        <img src="img8.jpg" alt="Financeiro##">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina9.html')">
+        <img src="img9.jpg" alt="">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina10.html')">
+        <img src="img10.jpg" alt="">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina11.html')">
+        <img src="img11.jpg" alt="">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina12.html')">
+        <img src="img12.jpg" alt="">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina13.html')">
+        <img src="img13.jpg" alt="">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina14.html')">
+        <img src="img14.jpg" alt="">
+    </div>
+    <div class="grid-item" onclick="goToPage('pagina15.html')">
+        <img src="img15.jpg" alt="Sair">
